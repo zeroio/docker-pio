@@ -16,8 +16,12 @@ RUN locale-gen $LANG && \
     apt-get install -y oracle-java8-installer && \
     pip install pytz predictionio && \
     wget -O - https://d8k1yxp8elc6b.cloudfront.net/PredictionIO-0.9.5.tar.gz | tar zx && \
-	mkdir -p /opt/pio;mkdir -p /data/pio && \
-	mv PredictionIO-0.9.5/* /opt/pio
+	mkdir -p /opt/pio && \
+	mkdir -p /data/pio && \ 
+	mv PredictionIO-0.9.5/* /opt/pio && \
+	mkdir /opt/pio/vendors && \
+	rm rm -r PredictionIO-0.9.5 && \
+	wget -O - http://d3kbcqa49mib13.cloudfront.net/spark-1.5.1-bin-hadoop2.6.tgz | tar zx -C /opt/pio/vendors
 
 COPY conf /opt/pio/conf
 RUN chmod +x /opt/pio/conf/*.sh

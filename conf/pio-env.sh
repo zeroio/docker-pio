@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # SPARK_HOME: Apache Spark is a hard dependency and must be configured.
-SPARK_HOME=$PIO_HOME/vendors/spark-1.4.1-bin-hadoop2.6
+SPARK_HOME=$PIO_HOME/vendors/spark-1.5.1-bin-hadoop2.6
 
 PIO_FS_BASEDIR=$PIO_FS
 PIO_FS_ENGINESDIR=$PIO_FS_BASEDIR/engines
